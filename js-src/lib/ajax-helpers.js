@@ -1,6 +1,6 @@
-let AJX = window.AJX || {};
+let AJAX = window.AJAX || {};
 
-AJX.html = class {
+AJAX.html = class {
     /**
     * Append / Replace html within the document with AJAX Call
     * @param {url:"..",sel:"div selector"}
