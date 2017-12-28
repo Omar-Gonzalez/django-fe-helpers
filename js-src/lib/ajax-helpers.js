@@ -32,6 +32,7 @@ AJAX.html = class {
     }
 
     static _GET(opt,cb) {
+        $(opt.sel).addClass("loader");
         jQuery.ajax({
                 url: opt.url,
                 type: "GET",
@@ -48,7 +49,7 @@ AJAX.html = class {
                 return errorThrown;
             })
             .always(function() {
-                /* ... */
+                $(opt.sel).removeClass("loader");
                 if(!cb){
                     return;
                 }
@@ -60,3 +61,5 @@ AJAX.html = class {
             });
     }
 };
+
+module.exports = AJAX;
