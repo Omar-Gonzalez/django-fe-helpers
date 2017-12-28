@@ -1,0 +1,134 @@
+//Debug Settings
+$debug:false;
+$debug-grid-color:#03A9F4;
+
+//Theme Colors
+$sidebar-bg-color:#283593;
+$sidebar-nav-bg-color:#3F51B5;
+$sidebar-icon-color:white;
+$sidebar-a-color:white;
+$sidebar-ul-color:white;
+
+//Sidebar shadow
+$sidebar-mobile-shadow: 1px 0px 2px 0px rgba(18,18,18,1);
+
+//Sidebar Break Points
+$break-mobile: 768px;
+
+//Sidebar Width 
+$sidebar-mobile-width:44px;
+$sidebar-desktop-width:240px;
+
+body,html{
+    margin: 0px;
+    padding: 0px;
+}
+
+.content{
+    @if $debug {
+        outline:1px solid $debug-grid-color;
+    }
+    @media (max-width: $break-mobile){
+        margin-left:$sidebar-mobile-width;
+    }
+
+    @media (min-width: $break-mobile){
+        margin-left:$sidebar-desktop-width;
+    }
+}
+
+[class*="col-"]{
+    @if $debug {
+        outline:1px solid $debug-grid-color;
+    }
+}
+
+#sidebar{
+    position: fixed;
+    height: 100%;
+    background-color: $sidebar-bg-color;
+    z-index: 10;
+
+    .sidebar-content{
+        width: 100%;
+    }
+
+    ul{
+        color:$sidebar-ul-color;
+        padding-left: 0;
+        list-style-type: none;
+        li{
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+        p, a, h1, h2, h3, h4{
+            padding-left: 30px;
+        }
+        a{
+            color:$sidebar-a-color;
+            display: block;
+            text-decoration: none;
+            &:hover{
+                background-color:$sidebar-nav-bg-color;
+            }
+        }
+    }
+    .sidebar-content{
+        display: block;
+    }
+
+    //Mobile
+    @media (max-width: $break-mobile){
+        width:$sidebar-mobile-width;
+        box-shadow: 1px 0px 2px 0px rgba(18,18,18,1);
+        hr{
+            display: block;
+            color:$sidebar-icon-color;
+        }
+        .sidebar-nav{
+            background-color: $sidebar-nav-bg-color; 
+            min-height: $sidebar-mobile-width;
+        }
+        .sb-toggle{
+            color:$sidebar-icon-color;
+            padding-left: 10px;
+            padding-top: 10px;
+            font-size: 22px;
+            display:block;
+        }
+        .sb-close{
+            color:$sidebar-icon-color;
+            font-size: 22px;
+            float: right;
+            margin-top: -20px;
+            margin-right: 12px;
+            display: none;
+        }
+        .sidebar-content{
+            display: none;
+        }
+        .sb-toggle{
+            display: block;
+        }
+        .sb-close{
+            display: none;
+        }
+        hr{
+            display: block;
+        }
+    }
+
+    //Desktop
+    @media (min-width: $break-mobile){
+        width:$sidebar-desktop-width;
+        .sb-toggle{
+            display: none;
+        }
+        .sb-close{
+            display: none;
+        }
+        hr{
+            display: none;
+        }
+    }
+}

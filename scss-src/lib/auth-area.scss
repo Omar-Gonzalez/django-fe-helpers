@@ -1,0 +1,57 @@
+$auth-area-bg:#E0E0E0;
+$auth-area-header-bg:#212121;
+$auth-legend-color:white;
+$auth-legend-accent:#2196F3;
+
+#auth-area{
+    background-color: $auth-area-bg;
+    width: 100%;
+    margin: 0px;
+
+    .auth-content{
+        display: none;
+    }
+
+    .auth-close{
+        float: right;
+        color:$auth-legend-color;
+        font-size: 22px;
+        margin-top: -33px;
+        margin-right: 11px;
+        display: none;
+    }
+
+    #auth-header{
+        background-color: $auth-area-header-bg;
+        height: 52px;
+        cursor:pointer;
+        &:hover{
+            .auth-legend{
+                color:$auth-legend-accent;
+            }
+            .auth-close{
+                color:$auth-legend-accent;
+            }
+        }
+    }
+
+    //Mobile
+    @media (max-width: $break-mobile){
+        .auth-legend{
+            text-align: center;
+            font-size: 15px;
+            margin-top: 17px;
+            color:$auth-legend-accent;
+        }
+    }
+
+    //Desktop
+    @media (min-width: $break-mobile){
+        .auth-legend{
+            text-align: center;
+            font-size: 18px;
+            margin-top: 12px;
+            color:$auth-legend-color;
+        }
+    }
+}

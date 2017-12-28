@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fe Helpers</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="./dist/app.bundle.js"></script>
+</head>
+<body>
+
+<div id="sidebar">
+    <div class="sidebar-nav">
+        <span class="glyphicon glyphicon-menu-hamburger sb-toggle"></span>
+        <span class="glyphicon glyphicon-remove-circle sb-close"></span>
+        <hr>
+    </div>
+    <div class="sidebar-content">
+        <ul class="sidebar-ul">
+            <li><h3>Navigation</h3></li>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="content">
+    <!-- if app needs auth use container -->
+    <div id="auth-area" class="container-fluid">
+        <div id="auth-header" class="row">
+                <p class="auth-legend"><a class="auth-legend">Login or Register</a></p>
+                <span class="glyphicon glyphicon-remove-circle auth-close"></span>
+        </div>
+        <div class="row auth-content">
+            <!--Auth forms and what not -->
+            <div class="col-md-6 col-sm-6 col-xs-6"><h4>Do you have an account? Login</h4></div>
+            <div class="col-md-6 col-sm-6 col-xs-6"><h4>First time? Create a new account</h4></div>
+        </div>
+    </div>
+    <!--/ Auth-area -->
+</div>
+</body>
+</html>
