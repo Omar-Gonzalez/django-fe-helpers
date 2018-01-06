@@ -30,7 +30,6 @@ $(document).ready(function() {
      * Update Auth Area
      */
     $('#vertical-slide-header').click(function() {
-        console.log("works")
         UI.verticalSlide.update();
     });
 });
