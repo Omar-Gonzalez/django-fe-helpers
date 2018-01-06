@@ -2,5 +2,6 @@
 @import url('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css');
 
 //Custom Sheets
+@import './lib/loader.scss';
 @import './lib/sidebar.scss';
-@import './lib/auth-area.scss';
+@import './lib/vertical-slide.scss';

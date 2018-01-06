@@ -78,15 +78,15 @@ UI.Sidebar = class {
 
 UI.sb = new UI.Sidebar();
 
-UI.AuthArea = class {
+UI.VerticalSlide = class {
     /**
      * Auth Area Component - props:
      * - this.updating : weather the auth area is updating state
      * - this.state : weather the auth area is open or close
      * Auth Area - methods:
      * - update() - close or open the side bar
-     */    
-     constructor() {
+     */
+    constructor() {
         //Props
         this.updating = false;
         this.state = "close";
@@ -98,43 +98,30 @@ UI.AuthArea = class {
         if (!this.updating) {
             if (this.state === 'close') {
                 this.updating = true;
-                $('.auth-close').fadeIn('fast');
-                $('#auth-area').animate({
+                $('.vertical-close').fadeIn('fast');
+                $('#vertical-slide').animate({
                     height: window.innerHeight + 'px'
                 }, 350, () => {
                     this.updating = false;
                     this.state = 'open';
-                    $('.auth-content').fadeIn('fast');
+                    $('.vertical-content').fadeIn('fast');
                 });
             }
             if (this.state === 'open') {
                 this.updating = true;
-                $('.auth-content').fadeOut('fast');
-                $('#auth-area').animate({
+                $('.vertical-content').fadeOut('fast');
+                $('#vertical-slide').animate({
                     height: '52px'
                 }, 350, () => {
                     this.updating = false;
                     this.state = 'close';
-                    $('.auth-close').fadeOut('fast');
+                    $('.vertical-close').fadeOut('fast');
                 });
             }
         }
     }
 };
 
-UI.authArea = new UI.AuthArea();
+UI.verticalSlide = new UI.VerticalSlide();
 
-$(document).ready(function() {
-    /**
-     * Update Sidebar 
-     */
-    $('.sb-toggle, .sb-close').click(function() {
-        UI.sb.update();
-    });
-    /**
-     * Update Auth Area
-     */
-    $('#auth-header').click(function() {
-        UI.authArea.update();
-    });
-});
+module.exports = UI;
