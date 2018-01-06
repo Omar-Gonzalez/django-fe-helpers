@@ -1,9 +1,13 @@
-//Dependencies
+/**
+* Dependencies
+*/
+
 //import 'bootstrap'; //Uncomment if you actually need boostrap js
 
 /**
 * Required Modules
 */
+
 const GlobalAjaxUpdate = require('./lib/ajax-calls');
 const ApplyDjangoSpecificStyles = require('./lib/django-styles.js');
 const UI = require('./lib/ui-scripts');
@@ -11,6 +15,7 @@ const UI = require('./lib/ui-scripts');
 /**
 * Consolidate Event Listeners Here:
 */
+
 $(document).ready(function() {
     /**
     * Execute Ajax update
